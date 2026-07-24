@@ -20,23 +20,40 @@
 
 - pandas
 - matplotlib
+- numpy
+- scipy
 
 ## Operating Systems
 
 - Windows (MinGW/MSYS2)
 - Linux
 
-## Project Files
+## Project Structure
 
-Required source files:
+Required files and directories:
 
 - include/
 - src/
-- Makefile
+- output/
+- graphs/
 - graph.py
+- Makefile
 
-Generated files:
+## Generated Files
 
-- curve_points.csv
-- ecc_curve_plot.png
-- ecc.exe
+### Output Data
+
+- output/curve_points.csv
+- output/plain_points.csv
+- output/cipher_points.csv
+
+### Generated Graphs
+
+- graphs/ecc_curve_plot.png
+- graphs/plain_points_plot.png
+- graphs/cipher_points_plot.png
+
+### Executable
+
+- ecc.exe (Windows)
+- ecc (Linux)
