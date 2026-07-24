@@ -22,7 +22,7 @@ int main(void)
 
     curve_print(&curve);
     export_curve_points_csv(&curve,
-                            "curve_points.csv");
+                            "output/curve_points.csv");
                             
     // Key Generation
 
@@ -86,6 +86,16 @@ int main(void)
 
     printf("\nEncryption / Decryption Process\n");
 
+    // Create Cipher Points CSV
+
+    FILE *cipher_csv = fopen("output/cipher_points.csv", "w");
+
+    if (cipher_csv != NULL)
+    {
+        fprintf(cipher_csv, "X,Y\n");
+        fclose(cipher_csv);
+    }
+
     // Process Each Character
 
     for (size_t i = 0; i < strlen(message); i++)
@@ -139,6 +149,18 @@ int main(void)
             continue;
         }
 
+        FILE *cipher_csv = fopen("output/cipher_points.csv", "a");
+
+        if (cipher_csv != NULL)
+        {
+            gmp_fprintf(cipher_csv,
+                        "%Zd,%Zd\n",
+                        cipher.C2.x,
+                        cipher.C2.y);
+            
+            fclose(cipher_csv);
+        }
+        
         // Decrypt 
 
         if (!decrypt_point(&recovered_point,

@@ -5,6 +5,43 @@
 
 #include "encode.h"
 
+/*
+ * Save encoded plaintext points to CSV.
+ */
+
+static int csv_initialized = 0;
+
+static void save_plain_point(unsigned char ch,
+                             const ECPoint *point)
+{
+    if (!csv_initialized)
+    {
+        FILE *fp = fopen("output/plain_points.csv", "w");
+
+        if (fp == NULL)
+            return;
+
+        fprintf(fp, "Character,X,Y\n");
+
+        fclose(fp);
+
+        csv_initialized = 1;
+    }
+
+    FILE *fp = fopen("output/plain_points.csv", "a");
+
+    if (fp == NULL)
+        return;
+
+    gmp_fprintf(fp,
+                "%c,%Zd,%Zd\n",
+                ch,
+                point->x,
+                point->y);
+
+    fclose(fp);
+}
+
 
 /*
  * Encode one character using the
@@ -87,6 +124,10 @@ int encode_character(ECPoint *encoded_point,
                 point_set(encoded_point,
                           x,
                           y);
+
+                /* Save plaintext point */
+                save_plain_point(character,
+                                 encoded_point);
 
                 mpz_clear(x);
                 mpz_clear(rhs);

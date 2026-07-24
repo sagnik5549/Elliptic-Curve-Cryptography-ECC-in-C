@@ -532,6 +532,7 @@ void point_print(const ECPoint *P)
                P->x,
                P->y);
 }
+
 // Generating csv of Data Points
 
 void export_curve_points_csv(const EllipticCurve *curve,

@@ -41,9 +41,17 @@ ECC-with-only-C/
 │   ├── scalar.c
 │   └── main.c
 │
+├── output/
+│   ├── curve_points.csv
+│   ├── plain_points.csv
+│   └── cipher_points.csv
+│
+├── graphs/
+│   ├── ecc_curve_plot.png
+│   ├── plain_points_plot.png
+│   └── cipher_points_plot.png
+│
 ├── graph.py
-├── curve_points.csv
-├── ecc_curve_plot.png
 ├── Makefile
 ├── requirements.md
 ├── .gitignore
