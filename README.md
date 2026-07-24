@@ -97,5 +97,5 @@ See **requirements.md** for software dependencies and libraries.
 ## Author
 
 **Sagnik Kundu**  
-B.Tech Computer Science and Engineering (AI & DS)
+B.Tech Computer Science and Engineering (AI & DS)<br>
 SASTRA Deemed University
