@@ -1,0 +1,79 @@
+# Build Files
+ 
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.exe
+*.out
+*.lib
+
+# Executables
+ecc
+ecc.exe
+
+ 
+# Debug Files
+ 
+*.dSYM/
+*.stackdump
+*.log
+
+ 
+# VS Code
+ 
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+ 
+# Visual Studio
+ 
+.vs/
+
+ 
+# Temporary Files
+ 
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+ 
+# Operating System Files
+ 
+.DS_Store
+Thumbs.db
+desktop.ini
+
+ 
+# Archives
+ 
+*.zip
+*.tar
+*.gz
+*.7z
+
+ 
+# Keys (Uncomment if generated)
+ 
+# private.pem
+# public.pem
+# keys/
+
+ 
+# Python (for plotting scripts)
+ 
+__pycache__/
+.venv/
+env/
+
+ 
+# GCC Coverage / Profiling
+ 
+*.gcda
+*.gcno
+*.gcov
