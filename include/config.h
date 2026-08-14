@@ -12,12 +12,12 @@
 
 #define CURVE_NAME "ECC Curve"
 
-#define CURVE_P      "8209"
-#define CURVE_A      "2"
-#define CURVE_B      "7"
+#define CURVE_P      "211"
+#define CURVE_A      "0"
+#define CURVE_B      "-4"
 
-#define GENERATOR_X  "4"
-#define GENERATOR_Y  "1313"
+#define GENERATOR_X  "2"
+#define GENERATOR_Y  "2"
 
 
 #endif
